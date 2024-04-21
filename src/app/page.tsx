@@ -3,7 +3,7 @@ import { homeData } from "./data";
 import type { TVShowsList } from "src/utils/types/tvShows";
 
 async function getInfos() {
-  const info = await fetch("http://localhost:3000/api/infos");
+  const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`);
   return info.json();
 }
 

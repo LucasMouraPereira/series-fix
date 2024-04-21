@@ -1,0 +1,60 @@
+@keyframes slideIn {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: var(--spacings-xxxxl);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  padding: 20px 40px;
+  z-index: 100;
+  background: var(--gradient-main);
+  box-shadow: var(--shadow-main);
+  gap: 40px;
+  color: var(--text-secondary);
+}
+
+.logo {
+  font-weight: var(--typography-weight-semi-bold);
+}
+
+.flex {
+  display: flex;
+  gap: var(--spacings-lg);
+}
+
+.sidebar {
+  color: var(--text-secondary);
+  position: fixed;
+  box-shadow: var(--shadow-main);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 200px;
+  top: 8%;
+  right: 0;
+  background-color: var(--border-main);
+  padding: 16px;
+  height: -webkit-fill-available;
+  z-index: 99;
+  animation: slideIn 0.6s ease-in-out;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.6);
+}

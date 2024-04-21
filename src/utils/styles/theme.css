@@ -1,0 +1,59 @@
+:root {
+  --background-primary: #e0d0ff;
+  --background-secondary: #fafbfd;
+  --background-third: #dbb2db;
+  --background-four: #ffe7ff;
+  --background-disabled: #cecece;
+  --text-primary: #616265;
+  --text-secondary: #ffffff;
+  --text-disabled: #000000;
+  --border-main: #c7a3f5;
+
+  --gradient-main: #582da8;
+  --shadow-main: 0px 0px 8px #0000004D;
+  --shadow-secondary: 4px 4px 8px #0000004D;
+
+  --spacings-xxs: 4px;
+  --spacings-xs: 8px;
+  --spacings-sm: 12px;
+  --spacings-md: 16px;
+  --spacings-lg: 32px;
+  --spacings-xl: 40px;
+  --spacings-xxl: 46px;
+  --spacings-xxxl: 64px;
+  --spacings-xxxxl: 80px;
+  --spacings-xxxxxl: 128px;
+
+  --transition-property: all;
+  --transition-timing-function: linear;
+  --transition-duration: 150ms;
+
+  --typography-sizes-xxs: 12px;
+  --typography-sizes-xs: 14px;
+  --typography-sizes-sm: 16px;
+  --typography-sizes-md: 18px;
+  --typography-sizes-lg: 28px;
+  --typography-sizes-xl: 32px;
+  --typography-sizes-xxl: 42px;
+
+  --typography-weight-light: 300;
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semi-bold: 600;
+  --typography-weight-bold: 700;
+
+  --typography-line-height-tight: 18px;
+  --typography-line-height-snug: 24px;
+  --typography-line-height-normal: 32px;
+
+  --typography-text-transform-uppercase: uppercase;
+  --typography-text-transform-lowercase: lowercase;
+  --typography-text-transform-capitalize: capitalize;
+  --typography-text-transform-normalCase: none;
+  
+  --container-sizes-sm: calc(100% - 30px);
+  --container-sizes-md: 720px;
+  --container-sizes-lg: 960px;
+  --container-sizes-xl: 1122px;
+  
+}

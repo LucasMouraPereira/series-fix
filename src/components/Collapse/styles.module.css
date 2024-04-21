@@ -1,0 +1,65 @@
+.wrapperCollapse {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seasonText {
+  background-color: #c2a2ff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title h3 {
+  color: var(--text-secondary);
+}
+
+.title svg {
+  color: var(--text-secondary);
+  width: 24px;
+  height: 24px;
+}
+
+.description {
+  padding-top: 8px;
+}
+
+.description p {
+  color: var(--text-secondary);
+}
+
+.text {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.episodes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupEpisode {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.episode {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}

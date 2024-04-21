@@ -1,0 +1,73 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap'); */
+@import url("theme.css");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: var(--typography-sizes-sm);
+  background: var(--background-primary);
+}
+body {
+  padding-bottom: 16px;
+}
+h1 {
+  text-align: center;
+  font-weight: var(--typography-weight-semi-bold);
+  color: var(--text-primary);
+  font-size: var(--typography-sizes-md);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--typography-weight-semi-bold);
+  color: var(--text-primary);
+  font-size: var(--typography-sizes-sm);
+}
+
+p {
+  font-weight: var(--typography-weight-regular);
+  color: var(--text-primary);
+  font-size: var(--typography-sizes-xs);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 32px;
+  }
+
+  h1 {
+    font-weight: var(--typography-weight-semi-bold);
+    color: var(--text-primary);
+    font-size: var(--typography-sizes-lg);
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: var(--typography-weight-semi-bold);
+    color: var(--text-primary);
+    font-size: var(--typography-sizes-md);
+  }
+
+  p {
+    font-weight: var(--typography-weight-regular);
+    color: var(--text-primary);
+    font-size: var(--typography-sizes-sm);
+  }
+}

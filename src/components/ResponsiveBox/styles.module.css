@@ -1,0 +1,20 @@
+.container {
+  margin: 0 auto;
+  max-width: var(--container-sizes-sm);
+
+  @media (min-width: 768px) {
+    max-width: var(--container-sizes-sm);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: var(--container-sizes-md);
+  }
+
+  @media (min-width: 1136px) {
+    max-width: var(--container-sizes-lg);
+  }
+
+  @media (min-width: 1280px) {
+    max-width: var(--container-sizes-xl);
+  }
+}

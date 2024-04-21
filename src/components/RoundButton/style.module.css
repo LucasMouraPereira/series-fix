@@ -1,0 +1,13 @@
+.wrapperRoundButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--background-third);
+    border-radius: 20px;
+    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+    /* cursor: ${disabled ? "auto" : "pointer"}; */
+    /* transform: ${rotation ? "rotate(180deg)" : "rotate(0deg)"}; */
+}

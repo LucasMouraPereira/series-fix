@@ -1,0 +1,58 @@
+.wrapperPagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px 80px;
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    margin: 16px 8px;
+  }
+}
+
+.wrapperText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--text-primary);
+}
+
+.wrapperText span {
+  font-weight: 700;
+}
+
+.wrapperRoundButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  @media (min-width: 768px) {
+    justify-content: unset;
+    align-items: unset;
+    gap: 8px;
+  }
+}
+
+.paginationMobile {
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.paginationDesktop {
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

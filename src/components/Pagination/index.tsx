@@ -1,3 +1,4 @@
+'use client'
 import { usePathRouter } from "src/utils/hooks/usePathRouter";
 import style from "./styles.module.css";
 import { RoundButton } from "../RoundButton";

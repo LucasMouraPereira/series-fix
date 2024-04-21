@@ -1,5 +1,8 @@
+import { Suspense } from "react";
 import { ShowsContainer } from "./containers";
 
 export const ShowsScreens = () => (
-  <ShowsContainer />
+  <Suspense>
+    <ShowsContainer />
+  </Suspense>
 );

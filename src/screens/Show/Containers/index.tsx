@@ -19,31 +19,32 @@ type ShowContainerProps = {
 export const ShowContainer = ({ show }: ShowContainerProps) => {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
-  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  const favorites =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("favorites") || "[]")
+      : [];
 
   useEffect(() => {
     const isFavorite = favorites.some((fav: Show) => fav.id === show?.id);
     setIsFavorite(isFavorite);
   }, [favorites, show]);
-  
+
   if (!show) return null;
   if (!show.episodes?.length) return null;
 
   const groupedEpisodes = groupEpisodesBySeason(show.episodes);
 
-
   const toggleFavorite = () => {
     const newFavorites = isFavorite
       ? favorites.filter((fav: Show) => fav.id !== show.id)
       : [...favorites, show];
-      setIsFavorite(!isFavorite);
+    setIsFavorite(!isFavorite);
     localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   const goBack = () => {
     router.back();
   };
-
 
   return (
     <main className={style.main}>
@@ -87,16 +88,19 @@ export const ShowContainer = ({ show }: ShowContainerProps) => {
             </p>
             <Rating rating={show.rating} />
           </div>
-          <p>
-            <strong>Network: </strong>
-            <Link
-              className={style.link}
-              href={show.network.officialSite}
-              target="_blank"
-            >
-              {show.network.name}
-            </Link>
-          </p>
+          {!!show?.network?.officialSite && (
+            <p>
+              <strong>Network: </strong>
+              <Link
+                className={style.link}
+                href={show?.network?.officialSite}
+                target="_blank"
+              >
+                {show.network.name}
+              </Link>
+            </p>
+          )}
+
           <p>
             <strong>Exibição: </strong>
             {show.schedule.days.map((day) => (

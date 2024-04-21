@@ -6,6 +6,6 @@ type ShowScreenProps = {
   slug: number;
 };
 export const ShowScreen = ({ slug }: ShowScreenProps) => {
-  const { show, loading, error } = useShowPage({ idShow: slug });
+  const { show } = useShowPage({ idShow: slug });
   return <ShowContainer show={show} />;
 };

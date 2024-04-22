@@ -4,7 +4,8 @@ import type { TVShowsList } from "src/utils/types/tvShows";
 
 async function getInfos() {
   const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`);
-  return info.json();
+  const newInfo = await info.json();
+  return newInfo;
 }
 
 async function getShows() {

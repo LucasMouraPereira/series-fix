@@ -1,62 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
-import fetch from "node-fetch";
-
-type IPGeolocationResponse = {
-  ip: string;
-  continent_code: string;
-  continent_name: string;
-  country_code2: string;
-  country_code3: string;
-  country_name: string;
-  country_name_official: string;
-  country_capital: string;
-  state_prov: string;
-  state_code: string;
-  district: string;
-  city: string;
-  zipcode: string;
-  latitude: string;
-  longitude: string;
-  is_eu: boolean;
-  calling_code: string;
-  country_tld: string;
-  languages: string;
-  country_flag: string;
-  geoname_id: string;
-  isp: string;
-  connection_type: string;
-  organization: string;
-  country_emoji: string;
-  currency: {
-    code: string;
-    name: string;
-    symbol: string;
-  };
-  time_zone: {
-    name: string;
-    offset: number;
-    offset_with_dst: number;
-    current_time: string;
-    current_time_unix: number;
-    is_dst: boolean;
-    dst_savings: number;
-    dst_exists: boolean;
-    dst_start: string;
-    dst_end: string;
-  };
-};
 
 export async function GET(_req: NextRequest) {
   const currentDate = new Date().toISOString().slice(0, 10);
-  const apiKey = process.env.API_KEY;
 
   try {
-    const response = await fetch(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`
-    );
-    const data = await response.json() as IPGeolocationResponse;
-    const countryCode = data.country_code2 || "US";
-    return NextResponse.json({ date: currentDate, country: countryCode });
+    return NextResponse.json({ date: currentDate });
   } catch (error) {
     return NextResponse.error();
   }

@@ -1,4 +1,4 @@
-import { FavoriteContainer } from 'src/screens/Favorite'
+import FavoriteContainer from 'src/screens/Favorite'
 const Favorites = () => {
   return <FavoriteContainer />
 }

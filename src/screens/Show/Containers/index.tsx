@@ -18,7 +18,7 @@ type ShowContainerProps = {
   show: Show | null
 }
 
-export const ShowContainer = ({ show }: ShowContainerProps) => {
+const ShowContainer = ({ show }: ShowContainerProps) => {
   const router = useRouter()
   const [isFavorite, setIsFavorite] = useState(false)
   const favorites = useMemo(() => {
@@ -131,3 +131,4 @@ export const ShowContainer = ({ show }: ShowContainerProps) => {
     </main>
   )
 }
+export default ShowContainer

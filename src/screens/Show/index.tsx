@@ -1,6 +1,6 @@
 'use client'
 import { useShowPage } from 'src/utils/hooks/useShowPage'
-import { ShowContainer } from './Containers'
+import ShowContainer  from './Containers'
 
 type ShowScreenProps = {
   slug: number

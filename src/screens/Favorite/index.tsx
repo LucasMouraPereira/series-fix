@@ -8,7 +8,7 @@ import { Card } from 'src/components/Card'
 import { TVShowCard } from 'src/providers/types'
 import { Show } from 'src/utils/types/tvShows'
 
-export const FavoriteContainer = () => {
+const FavoriteContainer = () => {
   const router = useRouter()
   const [favorites, setFavorites] = useState<TVShowCard[] | null>(null)
   const favoritesFromStorage = useMemo(() => {
@@ -61,3 +61,5 @@ export const FavoriteContainer = () => {
     </main>
   )
 }
+
+export default FavoriteContainer

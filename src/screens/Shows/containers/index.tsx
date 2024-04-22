@@ -7,7 +7,7 @@ import ListCards from 'src/components/ListCards'
 import { Card } from 'src/components/Card'
 import { Pagination } from 'src/components/Pagination'
 
-export const ShowsContainer = () => {
+const ShowsContainer = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const page = !searchParams.get('page') ? 0 : Number(searchParams.get('page'))
@@ -42,3 +42,5 @@ export const ShowsContainer = () => {
     </main>
   )
 }
+
+export default ShowsContainer

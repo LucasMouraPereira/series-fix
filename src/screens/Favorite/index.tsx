@@ -10,7 +10,7 @@ import { Show } from 'src/utils/types/tvShows'
 
 const FavoriteContainer = () => {
   const router = useRouter()
-  const [favorites, setFavorites] = useState<TVShowCard[] | null>(null)
+  const [favorites, setFavorites] = useState<TVShowCard[]>([])
   const favoritesFromStorage = useMemo(() => {
     if (typeof window !== 'undefined') {
       const storedFavorites = localStorage.getItem('favorites')

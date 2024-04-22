@@ -2,6 +2,7 @@ import HomeScreens from 'src/screens/Home'
 import homeData from '../utils/data'
 import type { TVShowsList } from 'src/utils/types/tvShows'
 
+export const revalidate = 30
 async function getInfos() {
   const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`)
   const newInfo = info.json()

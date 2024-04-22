@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { useShowPage } from 'src/utils/hooks/useShowPage'
 import styles from './styles.module.css'
 import ListCards from 'src/components/ListCards'
-import { Card } from 'src/components/Card'
+import Card from 'src/components/Card'
 import { Pagination } from 'src/components/Pagination'
 
 const ShowsContainer = () => {

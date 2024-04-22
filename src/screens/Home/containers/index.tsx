@@ -2,9 +2,9 @@
 import ListCards from 'src/components/ListCards'
 import { useShowContext } from 'src/providers/ShowsContext'
 import style from './styles.module.css'
-import { Button } from 'src/components/Button'
+import Button from 'src/components/Button'
 import { useRouter } from 'next/navigation'
-import { Card } from 'src/components/Card'
+import Card from 'src/components/Card'
 
 const HomeContainer = () => {
   const router = useRouter()

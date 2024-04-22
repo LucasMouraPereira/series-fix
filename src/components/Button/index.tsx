@@ -6,7 +6,7 @@ type ButtonProps = {
   position?: 'left' | 'right'
 }
 
-export const Button = ({ text, onClick, position = 'left' }: ButtonProps) => {
+const Button = ({ text, onClick, position = 'left' }: ButtonProps) => {
   const buttonStyles = position === 'left' ? styles.left : styles.right
   return (
     <button className={buttonStyles} onClick={onClick}>
@@ -14,3 +14,5 @@ export const Button = ({ text, onClick, position = 'left' }: ButtonProps) => {
     </button>
   )
 }
+
+export default Button

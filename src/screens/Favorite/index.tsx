@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from 'src/components/Button'
+import Button from 'src/components/Button'
 import style from './styles.module.css'
 import ListCards from 'src/components/ListCards'
-import { Card } from 'src/components/Card'
+import Card from 'src/components/Card'
 import { TVShowCard } from 'src/providers/types'
 import { Show } from 'src/utils/types/tvShows'
 

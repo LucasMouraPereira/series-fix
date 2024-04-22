@@ -7,7 +7,7 @@ type CardProps = {
   item: TVShowCard
   onClick?: () => void
 }
-export const Card = ({ item, onClick }: CardProps) => {
+const Card = ({ item, onClick }: CardProps) => {
   return (
     <div
       className={style.card}
@@ -42,3 +42,4 @@ export const Card = ({ item, onClick }: CardProps) => {
     </div>
   )
 }
+export default Card

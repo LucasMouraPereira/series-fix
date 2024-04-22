@@ -6,7 +6,7 @@ import { Button } from 'src/components/Button'
 import { useRouter } from 'next/navigation'
 import { Card } from 'src/components/Card'
 
-export const HomeContainer = () => {
+const HomeContainer = () => {
   const router = useRouter()
   const { showSchedule } = useShowContext()
   if (!showSchedule) return null
@@ -33,3 +33,5 @@ export const HomeContainer = () => {
     </main>
   )
 }
+
+export default HomeContainer

@@ -27,16 +27,23 @@ Develop a FULLY responsive web application that lists TV series and
 display the details.
 
 Click on a series to see details
+
 See details of each series
+
 Where the details will be displayed, it must contain the episodes separated by
 seasons and the possibility of choosing (through a select) which season
 the user will see the list of episodes
 
-Utilizar TypeScript.
-Construir a aplicação usando React.
-Gerencie os estados da maneira que quiser.
-Todas as requisições devem utilizar obrigatoriamente a fetch api.
-Estilização somente com CSS ou SCSS/SASS.
+
+Use TypeScript.
+
+Build the application using React.
+
+Manage states the way you want.
+
+All requests must use the fetch api.
+
+Styling only with CSS or SCSS/SASS.
 
 ## Prints
 Home

@@ -4,7 +4,7 @@ import type { TVShowsList } from 'src/utils/types/tvShows'
 
 async function getInfos() {
   const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`)
-  const newInfo = await info.json()
+  const newInfo = info.json()
   return newInfo
 }
 
@@ -13,7 +13,7 @@ async function getShows() {
   const res = await fetch(
     `https://api.tvmaze.com/schedule?country=US&date=${date}`
   )
-  const data = await res.json()
+  const data = res.json()
   return data
 }
 
@@ -32,7 +32,7 @@ const Home = async () => {
       showName: ep.show.name,
       language: !ep.show.language ? 'N/A' : ep.show.language,
       network: !ep.show.network?.name ? 'N/A' : ep.show.network.name,
-      image: ep.show.image,
+      image: ep?.show?.image,
       apiUrl: ep['_links'],
     })),
   }

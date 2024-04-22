@@ -1,19 +1,19 @@
-"use client";
-import { useState } from "react";
-import { NavLink } from "src/components/NavLink";
-import { ListNavLinks } from "./ListNavLinks";
-import { data } from "./data";
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
-import { useMediaQuery } from "src/utils/hooks/useMediaQuery";
-import styles from "./styles.module.css";
+'use client'
+import { useState } from 'react'
+import { NavLink } from 'src/components/NavLink'
+import { ListNavLinks } from './ListNavLinks'
+import { data } from './data'
+import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons'
+import { useMediaQuery } from 'src/utils/hooks/useMediaQuery'
+import styles from './styles.module.css'
 
 export const NavBar = () => {
-  const isDesktop = useMediaQuery("(min-width: 992px)");
-  const [showMenu, setShowMenu] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 992px)')
+  const [showMenu, setShowMenu] = useState(false)
 
   const toggleMenu = () => {
-    setShowMenu((prevShowMenu) => !prevShowMenu);
-  };
+    setShowMenu((prevShowMenu) => !prevShowMenu)
+  }
 
   return (
     <>
@@ -37,12 +37,12 @@ export const NavBar = () => {
       </nav>
       {showMenu && (
         <>
-        <div className={styles.overlay} />
-        <aside className={styles.sidebar}>
-          <ListNavLinks items={data.items} />
-        </aside>
+          <div className={styles.overlay} />
+          <aside className={styles.sidebar}>
+            <ListNavLinks items={data.items} />
+          </aside>
         </>
       )}
     </>
-  );
-};
+  )
+}

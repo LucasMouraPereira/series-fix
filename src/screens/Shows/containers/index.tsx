@@ -1,26 +1,26 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
-import { useShowPage } from "src/utils/hooks/useShowPage";
-import styles from "./styles.module.css";
-import { ListCards } from "src/components/ListCards";
-import { Card } from "src/components/Card";
-import { Pagination } from "src/components/Pagination";
+'use client'
+import { useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
+import { useShowPage } from 'src/utils/hooks/useShowPage'
+import styles from './styles.module.css'
+import { ListCards } from 'src/components/ListCards'
+import { Card } from 'src/components/Card'
+import { Pagination } from 'src/components/Pagination'
 
 export const ShowsContainer = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const page = !searchParams.get("page") ? 0 : Number(searchParams.get("page"));
-  const totalPages = Math.floor(1800 / 250);
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const page = !searchParams.get('page') ? 0 : Number(searchParams.get('page'))
+  const totalPages = Math.floor(1800 / 250)
   const { shows } = useShowPage({
     pagination: page !== 0 && page,
-  });
+  })
 
-  if (!shows?.length) return null;
+  if (!shows?.length) return null
 
   const goToShow = (id: number) => {
-    router.push(`/programas/${id}`);
-  };
+    router.push(`/programas/${id}`)
+  }
 
   return (
     <main className={styles.main}>
@@ -40,5 +40,5 @@ export const ShowsContainer = () => {
         isLastPage={page === totalPages}
       />
     </main>
-  );
-};
+  )
+}

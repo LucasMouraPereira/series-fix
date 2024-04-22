@@ -10,8 +10,8 @@
   --border-main: #c7a3f5;
 
   --gradient-main: #582da8;
-  --shadow-main: 0px 0px 8px #0000004D;
-  --shadow-secondary: 4px 4px 8px #0000004D;
+  --shadow-main: 0px 0px 8px #0000004d;
+  --shadow-secondary: 4px 4px 8px #0000004d;
 
   --spacings-xxs: 4px;
   --spacings-xs: 8px;
@@ -50,10 +50,9 @@
   --typography-text-transform-lowercase: lowercase;
   --typography-text-transform-capitalize: capitalize;
   --typography-text-transform-normalCase: none;
-  
+
   --container-sizes-sm: calc(100% - 30px);
   --container-sizes-md: 720px;
   --container-sizes-lg: 960px;
   --container-sizes-xl: 1122px;
-  
 }

@@ -1,10 +1,10 @@
-import { CSSProperties, ReactElement } from "react";
+import { CSSProperties, ReactElement } from 'react'
 
 export interface CardListItem {
-    id: number
+  id: number
 }
 
 export interface CardListProps<T> extends CSSProperties {
-    list?: Array<T> | null | undefined;
-    children: (item: T) => ReactElement
+  list?: Array<T> | null | undefined
+  children: (item: T) => ReactElement
 }

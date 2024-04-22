@@ -1,29 +1,29 @@
-import { useState } from "react";
-import Image from "next/image";
-import { Episode } from "src/utils/types/tvShows";
-import style from "./styles.module.css";
-import { CaretDownIcon } from "@radix-ui/react-icons";
-import { Rating } from "../Rating";
+import { useState } from 'react'
+import Image from 'next/image'
+import { Episode } from 'src/utils/types/tvShows'
+import style from './styles.module.css'
+import { CaretDownIcon } from '@radix-ui/react-icons'
+import { Rating } from '../Rating'
 
 type GroupedEpisodes = {
-  seasonText: string;
-  episodes: Episode[];
-};
+  seasonText: string
+  episodes: Episode[]
+}
 
 type CollapseProps = {
-  groupedEpisodes: GroupedEpisodes[];
-};
+  groupedEpisodes: GroupedEpisodes[]
+}
 
 export const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
-  const [openCollapse, setOpenCollapse] = useState<number | null>(null);
+  const [openCollapse, setOpenCollapse] = useState<number | null>(null)
 
   const handleClick = (season: number) => {
     if (openCollapse === season) {
-      setOpenCollapse(null);
+      setOpenCollapse(null)
     } else {
-      setOpenCollapse(season);
+      setOpenCollapse(season)
     }
-  };
+  }
 
   return (
     <div className={style.wrapperCollapse}>
@@ -78,5 +78,5 @@ export const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}

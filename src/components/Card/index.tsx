@@ -1,17 +1,17 @@
-import Image from "next/image";
-import style from "./styles.module.css";
-import { formatDate, limitString } from "src/utils/functions/texts";
-import { TVShowCard } from "src/providers/types";
+import Image from 'next/image'
+import style from './styles.module.css'
+import { formatDate, limitString } from 'src/utils/functions/texts'
+import { TVShowCard } from 'src/providers/types'
 
 type CardProps = {
-  item: TVShowCard;
-  onClick?: () => void;
-};
+  item: TVShowCard
+  onClick?: () => void
+}
 export const Card = ({ item, onClick }: CardProps) => {
   return (
     <div
       className={style.card}
-      style={{ cursor: onClick ? "pointer" : "default" }}
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
       onClick={onClick && onClick}
     >
       <Image
@@ -40,5 +40,5 @@ export const Card = ({ item, onClick }: CardProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}

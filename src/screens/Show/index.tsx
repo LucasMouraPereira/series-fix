@@ -1,11 +1,11 @@
-"use client";
-import { useShowPage } from "src/utils/hooks/useShowPage";
-import { ShowContainer } from "./Containers";
+'use client'
+import { useShowPage } from 'src/utils/hooks/useShowPage'
+import { ShowContainer } from './Containers'
 
 type ShowScreenProps = {
-  slug: number;
-};
+  slug: number
+}
 export const ShowScreen = ({ slug }: ShowScreenProps) => {
-  const { show } = useShowPage({ idShow: slug });
-  return <ShowContainer show={show} />;
-};
+  const { show } = useShowPage({ idShow: slug })
+  return <ShowContainer show={show} />
+}

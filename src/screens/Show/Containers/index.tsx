@@ -1,55 +1,56 @@
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { HeartFilledIcon, HeartIcon } from "@radix-ui/react-icons";
-import { Show } from "src/utils/types/tvShows";
-import style from "./styles.module.css";
-import { Button } from "src/components/Button";
-import { formatDate } from "src/utils/functions/texts";
-import Link from "next/link";
-import { groupEpisodesBySeason } from "src/utils/functions/array";
-import { Collapse } from "src/components/Collapse";
-import { Rating } from "src/components/Rating";
-import { RoundButton } from "src/components/RoundButton";
-import { useEffect, useState } from "react";
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { HeartFilledIcon, HeartIcon } from '@radix-ui/react-icons'
+import { Show } from 'src/utils/types/tvShows'
+import style from './styles.module.css'
+import { Button } from 'src/components/Button'
+import { formatDate } from 'src/utils/functions/texts'
+import Link from 'next/link'
+import { groupEpisodesBySeason } from 'src/utils/functions/array'
+import { Collapse } from 'src/components/Collapse'
+import { Rating } from 'src/components/Rating'
+import { RoundButton } from 'src/components/RoundButton'
+import { useEffect, useState } from 'react'
 
 type ShowContainerProps = {
-  show: Show | null;
-};
+  show: Show | null
+}
 
 export const ShowContainer = ({ show }: ShowContainerProps) => {
-  const router = useRouter();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const router = useRouter()
+  const [isFavorite, setIsFavorite] = useState(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const favorites =
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("favorites") || "[]")
-      : [];
+    typeof window !== 'undefined'
+      ? JSON.parse(localStorage.getItem('favorites') || '[]')
+      : []
 
   useEffect(() => {
-    const isFavorite = favorites.some((fav: Show) => fav.id === show?.id);
-    setIsFavorite(isFavorite);
-  }, [favorites, show]);
+    const isFavorite = favorites.some((fav: Show) => fav.id === show?.id)
+    setIsFavorite(isFavorite)
+  }, [favorites, show])
 
-  if (!show) return null;
-  if (!show.episodes?.length) return null;
+  if (!show) return null
+  if (!show.episodes?.length) return null
 
-  const groupedEpisodes = groupEpisodesBySeason(show.episodes);
+  const groupedEpisodes = groupEpisodesBySeason(show.episodes)
 
   const toggleFavorite = () => {
     const newFavorites = isFavorite
       ? favorites.filter((fav: Show) => fav.id !== show.id)
-      : [...favorites, show];
-    setIsFavorite(!isFavorite);
-    localStorage.setItem("favorites", JSON.stringify(newFavorites));
-  };
+      : [...favorites, show]
+    setIsFavorite(!isFavorite)
+    localStorage.setItem('favorites', JSON.stringify(newFavorites))
+  }
 
   const goBack = () => {
-    router.back();
-  };
+    router.back()
+  }
 
   return (
     <main className={style.main}>
       <div className={style.header}>
-        <Button text={"Voltar"} onClick={goBack} position="right" />
+        <Button text={'Voltar'} onClick={goBack} position="right" />
         <h1>{show.name}</h1>
       </div>
       <div className={style.contentShow}>
@@ -121,5 +122,5 @@ export const ShowContainer = ({ show }: ShowContainerProps) => {
       </div>
       <Collapse groupedEpisodes={groupedEpisodes} />
     </main>
-  );
-};
+  )
+}

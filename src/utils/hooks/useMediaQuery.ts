@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react'
 
 export const useMediaQuery = (mediaQuery: string) => {
-  const [matches, setMatches] = useState(false);
+  const [matches, setMatches] = useState(false)
 
   useEffect(() => {
-    const mediaWatcher = window.matchMedia(mediaQuery);
-    setMatches(mediaWatcher.matches);
+    const mediaWatcher = window.matchMedia(mediaQuery)
+    setMatches(mediaWatcher.matches)
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updateMatches = (e: any) => {
-      setMatches(e.matches);
+      setMatches(e.matches)
     }
 
-    if(mediaWatcher.addEventListener) {
+    if (mediaWatcher.addEventListener) {
       mediaWatcher.addEventListener('change', updateMatches)
       return function cleanup() {
         mediaWatcher.removeEventListener('change', updateMatches)
@@ -22,7 +24,7 @@ export const useMediaQuery = (mediaQuery: string) => {
         mediaWatcher.removeListener(updateMatches)
       }
     }
-  }, []);
+  }, [])
 
-  return matches;
-};
+  return matches
+}

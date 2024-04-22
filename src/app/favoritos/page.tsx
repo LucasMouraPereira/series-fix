@@ -1,6 +1,6 @@
-import { FavoriteContainer } from "src/screens/Favorite";
+import { FavoriteContainer } from 'src/screens/Favorite'
 const Favorites = () => {
-  return <FavoriteContainer />;
-};
+  return <FavoriteContainer />
+}
 
-export default Favorites;
+export default Favorites

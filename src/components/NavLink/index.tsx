@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 type NavLinkProps = {
   href: string
-  [x: string]: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [x: string]: any
 }
 
 export const NavLink = ({ href, ...rest }: NavLinkProps) => {
-  return <Link href={href} {...rest} />;
-};
+  return <Link href={href} {...rest} />
+}

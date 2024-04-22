@@ -1,9 +1,9 @@
 type SearchInputProps = {
-  searchTerm: string;
-  handleSubmit: (event: any) => void;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleCancelSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+  searchTerm: string
+  handleSubmit: (event: unknown) => void
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleCancelSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   searchTerm,
@@ -22,7 +22,9 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         onChange={handleChange}
         onInput={handleCancelSubmit}
       />
-      <button type="button" onClick={handleSubmit}>Search</button>
+      <button type="button" onClick={handleSubmit}>
+        Search
+      </button>
     </form>
-  );
-};
+  )
+}

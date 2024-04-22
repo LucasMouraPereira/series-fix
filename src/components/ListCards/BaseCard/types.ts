@@ -1,8 +1,8 @@
-import { CSSProperties } from "react";
+import { CSSProperties } from 'react'
 export interface BaseCardProps {
-  width?: string | number;
-  height?: string | number;
-  bgColor?: string;
+  width?: string | number
+  height?: string | number
+  bgColor?: string
 }
 
-export type BodyCardProps = CSSProperties;
+export type BodyCardProps = CSSProperties

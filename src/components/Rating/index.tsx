@@ -1,15 +1,15 @@
-import style from "./styles.module.css";
-import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
+import style from './styles.module.css'
+import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons'
 
 type RatingProps = {
   rating: {
-    average: number;
-  };
-};
+    average: number
+  }
+}
 
 export const Rating = ({ rating }: RatingProps) => {
-  const newRating = Math.round(rating.average);
-  const average = Array.from({ length: 10 }, (_, index) => index);
+  const newRating = Math.round(rating.average)
+  const average = Array.from({ length: 10 }, (_, index) => index)
   return (
     <div className={style.stars}>
       {average.map((_, index) => (
@@ -18,5 +18,5 @@ export const Rating = ({ rating }: RatingProps) => {
         </p>
       ))}
     </div>
-  );
-};
+  )
+}

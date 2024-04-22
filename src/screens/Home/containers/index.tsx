@@ -1,22 +1,22 @@
-"use client";
-import { ListCards } from "src/components/ListCards";
-import { useShowContext } from "src/providers/ShowsContext";
-import style from "./styles.module.css";
-import { Button } from "src/components/Button";
-import { useRouter } from "next/navigation";
-import { Card } from "src/components/Card";
+'use client'
+import { ListCards } from 'src/components/ListCards'
+import { useShowContext } from 'src/providers/ShowsContext'
+import style from './styles.module.css'
+import { Button } from 'src/components/Button'
+import { useRouter } from 'next/navigation'
+import { Card } from 'src/components/Card'
 
 export const HomeContainer = () => {
-  const router = useRouter();
-  const { showSchedule } = useShowContext();
-  if (!showSchedule) return null;
+  const router = useRouter()
+  const { showSchedule } = useShowContext()
+  if (!showSchedule) return null
 
   const goToShows = () => {
-    router.push(showSchedule.link.href);
-  };
+    router.push(showSchedule.link.href)
+  }
   const goToShow = (id: number) => {
-    router.push(`/programas/${id}`);
-  };
+    router.push(`/programas/${id}`)
+  }
 
   return (
     <main className={style.main}>
@@ -31,5 +31,5 @@ export const HomeContainer = () => {
         </ListCards>
       </div>
     </main>
-  );
-};
+  )
+}

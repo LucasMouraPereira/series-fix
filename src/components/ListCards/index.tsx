@@ -1,6 +1,6 @@
-import { Grid } from "../Grid";
-import { BaseCard } from "./BaseCard";
-import { CardListItem, CardListProps } from "./types";
+import { Grid } from '../Grid'
+import { BaseCard } from './BaseCard'
+import { CardListItem, CardListProps } from './types'
 
 export const ListCards = <T extends CardListItem>({
   list,
@@ -15,5 +15,5 @@ export const ListCards = <T extends CardListItem>({
         </BaseCard>
       ))}
     </Grid>
-  );
-};
+  )
+}

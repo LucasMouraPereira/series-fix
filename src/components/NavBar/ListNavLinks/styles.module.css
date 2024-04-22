@@ -1,5 +1,5 @@
 .navlink {
-  color: inherit; 
+  color: inherit;
   position: relative;
 }
 
@@ -9,8 +9,8 @@
   bottom: -2px;
   width: 0;
   height: 2px;
-  background-color:var(--text-secondary); 
-  transition: width 0.3s; 
+  background-color: var(--text-secondary);
+  transition: width 0.3s;
 }
 
 .navlink:hover .underline {

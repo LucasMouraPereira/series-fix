@@ -1,7 +1,7 @@
-import { ShowsScreens } from "src/screens/Shows";
+import { ShowsScreens } from 'src/screens/Shows'
 
 const Shows = async () => {
-    return <ShowsScreens />
+  return <ShowsScreens />
 }
 
-export default Shows;
+export default Shows

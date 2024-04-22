@@ -1,53 +1,53 @@
-"use client";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "src/components/Button";
-import style from "./styles.module.css";
-import { ListCards } from "src/components/ListCards";
-import { Card } from "src/components/Card";
-import { TVShowCard } from "src/providers/types";
-import { Show } from "src/utils/types/tvShows";
+'use client'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Button } from 'src/components/Button'
+import style from './styles.module.css'
+import { ListCards } from 'src/components/ListCards'
+import { Card } from 'src/components/Card'
+import { TVShowCard } from 'src/providers/types'
+import { Show } from 'src/utils/types/tvShows'
 
 export const FavoriteContainer = () => {
-  const router = useRouter();
-  const [favorites, setFavorites] = useState<TVShowCard[] | null>(null);
+  const router = useRouter()
+  const [favorites, setFavorites] = useState<TVShowCard[] | null>(null)
 
   useEffect(() => {
     const favoritesFromStorage: Show[] = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
+      localStorage.getItem('favorites') || '[]'
+    )
     const objFav = favoritesFromStorage.map((fav: Show) => ({
       showId: fav?.id,
       id: fav?.id,
       airdate: fav.ended,
       airtime: fav.schedule.time,
       showName: fav.name,
-      language: !fav.language ? "N/A" : fav.language,
-      network: !fav.network?.name ? "N/A" : fav.network.name,
+      language: !fav.language ? 'N/A' : fav.language,
+      network: !fav.network?.name ? 'N/A' : fav.network.name,
       image: fav.image,
       apiUrl: {
-        self: fav["_links"]?.self,
+        self: fav['_links']?.self,
         show: {
-          href: fav["_links"]?.self.href,
+          href: fav['_links']?.self.href,
           name: fav.name,
         },
       },
-    }));
-    setFavorites(objFav);
-  }, []);
+    }))
+    setFavorites(objFav)
+  }, [])
   const goToHome = () => {
-    router.push("/");
-  };
+    router.push('/')
+  }
   const goToShow = (id: number) => {
-    router.push(`/programas/${id}`);
-  };
+    router.push(`/programas/${id}`)
+  }
 
   return (
     <main className={style.main}>
       <div className={style.header}>
         <h1>Seus Favoritos</h1>
         <p>Visualize os seus programas favoritos</p>
-        <Button text={"Voltar"} onClick={goToHome} position="right" />
+        <Button text={'Voltar'} onClick={goToHome} position="right" />
       </div>
       <div>
         <ListCards list={favorites} borderRadius="8px">
@@ -55,5 +55,5 @@ export const FavoriteContainer = () => {
         </ListCards>
       </div>
     </main>
-  );
-};
+  )
+}

@@ -1,25 +1,26 @@
-import style from "./style.module.css";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import style from './style.module.css'
 
 type RoundButtonProps = {
-  children: React.ReactNode;
-  disabled?: boolean;
-  onClick?: (() => void) | any;
-  type?: "button" | "submit" | "reset" | undefined;
-};
+  children: React.ReactNode
+  disabled?: boolean
+  onClick?: (() => void) | any
+  type?: 'button' | 'submit' | 'reset' | undefined
+}
 
 export const RoundButton = ({
   children,
   disabled = false,
   onClick,
-  type = "button",
+  type = 'button',
 }: RoundButtonProps) =>
-  type !== "submit" ? (
+  type !== 'submit' ? (
     <button
       className={style.wrapperRoundButton}
       disabled={disabled}
       type={type}
       onClick={() => onClick && onClick()}
-      style={{ cursor: disabled ? "default" : "pointer" }}
+      style={{ cursor: disabled ? 'default' : 'pointer' }}
     >
       {children}
     </button>
@@ -28,8 +29,8 @@ export const RoundButton = ({
       className={style.wrapperRoundButton}
       disabled={disabled}
       type={type}
-      style={{ cursor: disabled ? "default" : "pointer" }}
+      style={{ cursor: disabled ? 'default' : 'pointer' }}
     >
       {children}
     </button>
-  );
+  )

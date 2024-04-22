@@ -1,7 +1,7 @@
 'use client'
 import { usePathRouter } from 'src/utils/hooks/usePathRouter'
 import style from './styles.module.css'
-import { RoundButton } from '../RoundButton'
+import RoundButton from '../RoundButton'
 import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons'
 
 type PaginationProps = {
@@ -11,11 +11,7 @@ type PaginationProps = {
   isLastPage: boolean
 }
 
-export const Pagination = ({
-  page,
-  totalPages,
-  isFirstPage,
-}: PaginationProps) => {
+const Pagination = ({ page, totalPages, isFirstPage }: PaginationProps) => {
   const { onClickPath } = usePathRouter()
   const goBack = () => {
     if (page > 0) {
@@ -67,3 +63,5 @@ export const Pagination = ({
     </div>
   )
 }
+
+export default Pagination

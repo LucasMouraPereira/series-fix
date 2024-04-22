@@ -10,8 +10,8 @@ import { formatDate } from 'src/utils/functions/texts'
 import Link from 'next/link'
 import { groupEpisodesBySeason } from 'src/utils/functions/array'
 import Collapse from 'src/components/Collapse'
-import { Rating } from 'src/components/Rating'
-import { RoundButton } from 'src/components/RoundButton'
+import Rating from 'src/components/Rating'
+import RoundButton from 'src/components/RoundButton'
 import { useEffect, useMemo, useState } from 'react'
 
 type ShowContainerProps = {

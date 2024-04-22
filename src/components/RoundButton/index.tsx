@@ -8,7 +8,7 @@ type RoundButtonProps = {
   type?: 'button' | 'submit' | 'reset' | undefined
 }
 
-export const RoundButton = ({
+const RoundButton = ({
   children,
   disabled = false,
   onClick,
@@ -34,3 +34,5 @@ export const RoundButton = ({
       {children}
     </button>
   )
+
+export default RoundButton

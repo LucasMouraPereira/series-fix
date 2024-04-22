@@ -1,6 +1,6 @@
 import { buildUrl } from 'src/utils/functions/url'
 import { TVShowsList } from 'src/utils/types/tvShows'
-import { ShowScreen } from 'src/screens/Show'
+import ShowScreen from 'src/screens/Show'
 
 type ShowProps = {
   params: {

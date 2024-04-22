@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Episode } from 'src/utils/types/tvShows'
 import style from './styles.module.css'
 import { CaretDownIcon } from '@radix-ui/react-icons'
-import { Rating } from '../Rating'
+import Rating from '../Rating'
 
 type GroupedEpisodes = {
   seasonText: string

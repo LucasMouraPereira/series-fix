@@ -29,8 +29,13 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+
 ## ENV
 ```bash
 NEXT_PUBLIC_BASE_URL=http://localhost:3000/
 ```
 
+## Prints
+Home
+
+<img width="1440" alt="Captura de Tela 2024-04-22 às 20 27 06" src="https://github.com/LucasMouraPereira/series-fix/assets/44249663/0cbfe435-8682-446c-bf4d-8f0c99195d25">

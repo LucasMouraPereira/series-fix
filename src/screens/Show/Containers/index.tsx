@@ -22,8 +22,12 @@ export const ShowContainer = ({ show }: ShowContainerProps) => {
   const router = useRouter()
   const [isFavorite, setIsFavorite] = useState(false)
   const favorites = useMemo(() => {
-    const storedFavorites = localStorage.getItem('favorites')
-    return storedFavorites ? JSON.parse(storedFavorites) : []
+    if (typeof window !== 'undefined') {
+      const storedFavorites = localStorage.getItem('favorites')
+      return storedFavorites ? JSON.parse(storedFavorites) : []
+    } else {
+      return []
+    }
   }, [])
 
   useEffect(() => {

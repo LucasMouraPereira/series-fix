@@ -12,8 +12,12 @@ export const FavoriteContainer = () => {
   const router = useRouter()
   const [favorites, setFavorites] = useState<TVShowCard[] | null>(null)
   const favoritesFromStorage = useMemo(() => {
-    const storedFavorites = localStorage.getItem('favorites')
-    return storedFavorites ? JSON.parse(storedFavorites) : []
+    if (typeof window !== 'undefined') {
+      const storedFavorites = localStorage.getItem('favorites')
+      return storedFavorites ? JSON.parse(storedFavorites) : []
+    } else {
+      return []
+    }
   }, [])
   useEffect(() => {
     const objFav = favoritesFromStorage.map((fav: Show) => ({

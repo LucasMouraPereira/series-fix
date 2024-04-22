@@ -14,7 +14,7 @@ type CollapseProps = {
   groupedEpisodes: GroupedEpisodes[]
 }
 
-export const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
+const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
   const [openCollapse, setOpenCollapse] = useState<number | null>(null)
 
   const handleClick = (season: number) => {
@@ -80,3 +80,5 @@ export const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
     </div>
   )
 }
+
+export default Collapse

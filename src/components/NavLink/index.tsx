@@ -6,6 +6,8 @@ type NavLinkProps = {
   [x: string]: any
 }
 
-export const NavLink = ({ href, ...rest }: NavLinkProps) => {
+const NavLink = ({ href, ...rest }: NavLinkProps) => {
   return <Link href={href} {...rest} />
 }
+
+export default NavLink

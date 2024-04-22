@@ -20,7 +20,7 @@ export const data: NavBarProps = {
     {
       slug: 'favorites',
       label: 'Favoritos',
-      href: './favoritos',
+      href: '/favoritos',
     },
   ],
 }

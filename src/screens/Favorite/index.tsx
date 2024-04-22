@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from 'src/components/Button'
 import style from './styles.module.css'
@@ -11,11 +11,11 @@ import { Show } from 'src/utils/types/tvShows'
 export const FavoriteContainer = () => {
   const router = useRouter()
   const [favorites, setFavorites] = useState<TVShowCard[] | null>(null)
-
+  const favoritesFromStorage = useMemo(() => {
+    const storedFavorites = localStorage.getItem('favorites')
+    return storedFavorites ? JSON.parse(storedFavorites) : []
+  }, [])
   useEffect(() => {
-    const favoritesFromStorage: Show[] = JSON.parse(
-      localStorage.getItem('favorites') || '[]'
-    )
     const objFav = favoritesFromStorage.map((fav: Show) => ({
       showId: fav?.id,
       id: fav?.id,

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { HeartFilledIcon, HeartIcon } from '@radix-ui/react-icons'
@@ -10,7 +12,7 @@ import { groupEpisodesBySeason } from 'src/utils/functions/array'
 import { Collapse } from 'src/components/Collapse'
 import { Rating } from 'src/components/Rating'
 import { RoundButton } from 'src/components/RoundButton'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 type ShowContainerProps = {
   show: Show | null
@@ -19,15 +21,16 @@ type ShowContainerProps = {
 export const ShowContainer = ({ show }: ShowContainerProps) => {
   const router = useRouter()
   const [isFavorite, setIsFavorite] = useState(false)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const favorites =
-    typeof window !== 'undefined'
-      ? JSON.parse(localStorage.getItem('favorites') || '[]')
-      : []
+  const favorites = useMemo(() => {
+    const storedFavorites = localStorage.getItem('favorites')
+    return storedFavorites ? JSON.parse(storedFavorites) : []
+  }, [])
 
   useEffect(() => {
-    const isFavorite = favorites.some((fav: Show) => fav.id === show?.id)
-    setIsFavorite(isFavorite)
+    if (!!favorites.length) {
+      const isFavorite = favorites?.some((fav: Show) => fav.id === show?.id)
+      setIsFavorite(isFavorite)
+    }
   }, [favorites, show])
 
   if (!show) return null

@@ -38,7 +38,7 @@ const FavoriteContainer = () => {
       },
     }))
     setFavorites(objFav)
-  }, [])
+  }, [favoritesFromStorage])
   const goToHome = () => {
     router.push('/')
   }

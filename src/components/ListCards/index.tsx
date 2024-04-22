@@ -1,5 +1,5 @@
-import { Grid } from '../Grid'
-import { BaseCard } from './BaseCard'
+import Grid from '../Grid'
+import BaseCard from './BaseCard'
 import { CardListItem, CardListProps } from './types'
 
 const ListCards = <T extends CardListItem>({

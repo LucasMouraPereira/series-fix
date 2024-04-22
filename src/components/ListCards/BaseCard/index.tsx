@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 import styles from './styles.module.css'
 import { BaseCardProps } from './types'
 
-export const BaseCard = ({
+const BaseCard = ({
   children,
   bgColor = '#c2a2ff',
   width,
@@ -35,3 +35,4 @@ const Body = ({ children, ...rest }: PropsWithChildren) => {
 
 BaseCard.Header = Header
 BaseCard.Body = Body
+export default BaseCard

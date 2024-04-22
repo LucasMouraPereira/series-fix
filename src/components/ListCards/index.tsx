@@ -2,7 +2,7 @@ import { Grid } from '../Grid'
 import { BaseCard } from './BaseCard'
 import { CardListItem, CardListProps } from './types'
 
-export const ListCards = <T extends CardListItem>({
+const ListCards = <T extends CardListItem>({
   list,
   children,
   ...cardProps
@@ -17,3 +17,5 @@ export const ListCards = <T extends CardListItem>({
     </Grid>
   )
 }
+
+export default ListCards

@@ -7,7 +7,7 @@ import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons'
 import { useMediaQuery } from 'src/utils/hooks/useMediaQuery'
 import styles from './styles.module.css'
 
-export const NavBar = () => {
+const NavBar = () => {
   const isDesktop = useMediaQuery('(min-width: 992px)')
   const [showMenu, setShowMenu] = useState(false)
 
@@ -46,3 +46,5 @@ export const NavBar = () => {
     </>
   )
 }
+
+export default NavBar

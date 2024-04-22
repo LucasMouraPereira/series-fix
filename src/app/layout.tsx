@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { ResponsiveBox } from 'src/components/ResponsiveBox'
-import { NavBar } from 'src/components/NavBar'
+import  ResponsiveBox from 'src/components/ResponsiveBox'
+import NavBar from 'src/components/NavBar'
 import { Nunito } from 'next/font/google'
 
 import 'src/utils/styles/globals.css'

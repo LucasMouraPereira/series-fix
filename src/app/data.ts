@@ -1,4 +1,4 @@
-export const homeData = {
+const homeData = {
   title: 'Próximas estreias das temporadas dos seus programas favoritos',
   description: 'Aqui você pode acompanhar os lançamentos do dia',
   link: {
@@ -6,3 +6,5 @@ export const homeData = {
     href: '/programas',
   },
 }
+
+export default homeData

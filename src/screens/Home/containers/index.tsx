@@ -1,5 +1,5 @@
 'use client'
-import { ListCards } from 'src/components/ListCards'
+import ListCards from 'src/components/ListCards'
 import { useShowContext } from 'src/providers/ShowsContext'
 import style from './styles.module.css'
 import { Button } from 'src/components/Button'

@@ -1,13 +1,13 @@
 'use client'
 import { useShowPage } from 'src/utils/hooks/useShowPage'
-import ShowContainer  from './containers'
+import ShowContainer  from './ShowContainer'
 
 type ShowScreenProps = {
   slug: number
 }
-const ShowScreen = ({ slug }: ShowScreenProps) => {
+const ShowScreens = ({ slug }: ShowScreenProps) => {
   const { show } = useShowPage({ idShow: slug })
   return <ShowContainer show={show} />
 }
 
-export default ShowScreen
+export default ShowScreens

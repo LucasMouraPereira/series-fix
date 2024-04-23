@@ -1,6 +1,6 @@
 import { buildUrl } from 'src/utils/functions/url'
 import { TVShowsList } from 'src/utils/types/tvShows'
-import ShowScreen from 'src/screens/Show'
+import ShowScreens from 'src/screens/ShowScreens'
 
 type ShowProps = {
   params: {
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 }
 
 const Show = async ({ params }: ShowProps) => {
-  return <ShowScreen slug={Number(params.slug)} />
+  return <ShowScreens slug={Number(params.slug)} />
 }
 
 export default Show

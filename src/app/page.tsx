@@ -1,4 +1,4 @@
-import HomeScreens from 'src/screens/Home'
+import HomeScreens from 'src/screens/HomeScreens'
 import homeData from '../utils/data'
 import type { TVShowsList } from 'src/utils/types/tvShows'
 

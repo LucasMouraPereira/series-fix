@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import ShowsContainer from './containers'
+import ShowsContainer from './ShowsContainer'
 
 const ShowsScreens = () => (
   <Suspense>

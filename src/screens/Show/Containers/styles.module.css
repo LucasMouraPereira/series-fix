@@ -27,6 +27,10 @@
   }
 }
 
+.contentShow img {
+  width: 100%;
+}
+
 .contentDescription {
   display: flex;
   flex-direction: column;

@@ -179,5 +179,5 @@ Files
             - globals.css -> global styles
             - theme.css -> style theme used all aplication
         - types
-            -tvShows.ts -> global types
+            - tvShows.ts -> global types
         - data.ts -> data used on app file

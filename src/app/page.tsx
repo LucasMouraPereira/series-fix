@@ -2,7 +2,8 @@ import HomeScreens from 'src/screens/HomeScreens'
 import homeData from '../utils/data'
 import type { TVShowsList } from 'src/utils/types/tvShows'
 
-export const revalidate = 30
+export const dynamic = 'auto'
+export const revalidate = false
 async function getInfos() {
   const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`)
   const newInfo = info.json()
@@ -25,7 +26,7 @@ const Home = async () => {
     title,
     description,
     link,
-    cards: res.map((ep) => ({
+    cards: res?.map((ep) => ({
       showId: ep.show.id,
       id: ep.id,
       airdate: ep.airdate,

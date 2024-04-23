@@ -85,6 +85,9 @@ Show
 Favorites
 <img width="1440" alt="Captura de Tela 2024-04-22 às 20 27 06" src="https://github.com/LucasMouraPereira/series-fix/assets/44249663/0cbfe435-8682-446c-bf4d-8f0c99195d25">
 
+## Recording
+[![Recodinf site](https://img.youtube.com/vi/Jqeyp2YDFik/0.jpg)](https://www.youtube.com/watch?v=Jqeyp2YDFik)
+
 ## Boilerplate
 
 Files

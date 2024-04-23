@@ -79,49 +79,82 @@ Files
           - layout.tsx -> Common rendering on all pages
           - page.tsx -> Home page
     - components -> Global Components
-        - Button
+        - Button -> Button Component
             - index.tsx
             - styles.module.css
-        - Card
+        - Card -> Card Component
             - index.tsx
             - styles.module.css
-        - Collapse
+        - Collapse -> Collapse Component
             - index.tsx
             - styles.module.css
-        - Grid
+        - Grid -> Grid Component
             - index.tsx
             - styles.module.css
-        - ListCards
-            - BaseCard
+        - ListCards -> ListCards Component
+            - BaseCard -> BaseCard Components
                 - index.tsx
                 - styles.module.css
                 - types.ts
             - index.tsx
             - styles.module.css
             - types.ts
-        - NavBar
+        - NavBar -> NavBar Component
             - ListNavLinks
                 - index.tsx
                 - styles.module.css
             - data.ts
             - index.tsx
             - styles.module.css
-        - NavLink
+        - NavLink -> NavLink Component
             - index.tsx
-        - Pagination
-            - index.tsx
-            - styles.module.css
-        - Rating
+        - Pagination -> Pagination Component
             - index.tsx
             - styles.module.css
-        - ResponsiveBox
+        - Rating -> Rating Component
+            - index.tsx
+            - styles.module.css
+        - ResponsiveBox -> ResponsiveBox Component
             - index.tsx
             - styles.module.css
             - types.ts
-        - RoundButton
+        - RoundButton -> RoundButton Component
             - index.tsx
             - styles.module.css
     - providers
-    - screens
+        - ShowsContext.tsx -> React Context
+        - types.tsx
+    - screens -> Building screens and specific components
+        - Favorite
+          - index.tsx
+          - styles.module.css
+        - Home
+            - containers
+                - index.tsx
+                - styles.module.css
+            - index.tsx
+        - Show
+            - containers
+                - index.tsx
+                - styles.module.css
+            - index.tsx
+        - Shows
+            - containers
+                - index.tsx
+                - styles.module.css
+            - index.tsx
     - utils
-    - 
+        - functions
+            - url.ts -> Functions that manipulate the endpoints urls
+            - text.ts -> Functions that manipulate the text structure
+            - array.ts -> Functions that manipulate the array structure
+        - hooks
+            - useMediaQuery.ts -> hook watch the screen size
+            - usePathRouter.ts -> hook add the page number to the URL path
+            - useShowPage.ts -> hook fetch api
+        - styles
+            - globals.css -> global styles
+            - theme.css -> style theme used all aplication
+        - types
+            -tvShows.ts -> global types
+        - data.ts -> data used on app file

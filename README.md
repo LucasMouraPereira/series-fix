@@ -151,21 +151,21 @@ Files
         - ShowsContext.tsx -> React Context
         - types.tsx
     - screens -> Building screens and specific components
-        - Favorite
+        - FavoriteScreens
           - index.tsx
           - styles.module.css
-        - Home
-            - containers
+        - HomeScreens
+            - HomeContainers
                 - index.tsx
                 - styles.module.css
             - index.tsx
-        - Show
-            - containers
+        - ShowScreens
+            - ShowVontainers
                 - index.tsx
                 - styles.module.css
             - index.tsx
-        - Shows
-            - containers
+        - ShowsScreens
+            - ShowsContainers
                 - index.tsx
                 - styles.module.css
             - index.tsx

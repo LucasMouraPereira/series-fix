@@ -59,7 +59,69 @@ Show
 <img width="1440" alt="Captura de Tela 2024-04-22 às 20 26 39" src="https://github.com/LucasMouraPereira/series-fix/assets/44249663/17873f2a-c080-46e7-939e-f210c4a848cc">
 <img width="1439" alt="Captura de Tela 2024-04-22 às 20 26 48" src="https://github.com/LucasMouraPereira/series-fix/assets/44249663/4e504b7b-3a24-4a7f-9800-92a0f3f2c98b">
 
-
-
 Favorites
 <img width="1440" alt="Captura de Tela 2024-04-22 às 20 27 06" src="https://github.com/LucasMouraPereira/series-fix/assets/44249663/0cbfe435-8682-446c-bf4d-8f0c99195d25">
+
+## Boilerplate
+
+Files
+- src
+    - app
+        - api -> Local endpoints created in nextjs
+          - infos -> https://localhost:3000/api/infos
+              - route.ts -> Today's data request by the server
+          - favoritos
+              - page.tsx -> Favorites page
+          - programas
+              - [slug]
+                  - page.tsx -> Show page
+              - page.tsx -> Shows page
+          - layout.tsx -> Common rendering on all pages
+          - page.tsx -> Home page
+    - components -> Global Components
+        - Button
+            - index.tsx
+            - styles.module.css
+        - Card
+            - index.tsx
+            - styles.module.css
+        - Collapse
+            - index.tsx
+            - styles.module.css
+        - Grid
+            - index.tsx
+            - styles.module.css
+        - ListCards
+            - BaseCard
+                - index.tsx
+                - styles.module.css
+                - types.ts
+            - index.tsx
+            - styles.module.css
+            - types.ts
+        - NavBar
+            - ListNavLinks
+                - index.tsx
+                - styles.module.css
+            - data.ts
+            - index.tsx
+            - styles.module.css
+        - NavLink
+            - index.tsx
+        - Pagination
+            - index.tsx
+            - styles.module.css
+        - Rating
+            - index.tsx
+            - styles.module.css
+        - ResponsiveBox
+            - index.tsx
+            - styles.module.css
+            - types.ts
+        - RoundButton
+            - index.tsx
+            - styles.module.css
+    - providers
+    - screens
+    - utils
+    - 

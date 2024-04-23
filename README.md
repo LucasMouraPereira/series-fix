@@ -45,6 +45,29 @@ All requests must use the fetch api.
 
 Styling only with CSS or SCSS/SASS.
 
+## Requirements implemented
+- Home
+  - The Home displays the shows that will be released on the day the user accesses the page.
+  - Endpoints
+      - https://localhost:3000/api/infos -> get today`s date of server
+      - https://api.tvmaze.com/schedule?country=US&date=${date} -> get the shows whose episodes will be released on the day.
+
+- Shows
+    - The Shows page lists all the shows paginated
+    - Endpoints
+        - https://api.tvmaze.com/shows?page=${pagination}
+- Show
+    - The Show page displays the details of the selected show along with the details of the episodes per season.
+    - On the Show page, the user can select their favorite show and store it in localstorage. This way, they can easily view it on the favorites page.
+    - Endpoints
+        - https://api.tvmaze.com/shows/${idShow}
+        - https://api.tvmaze.com/shows/${idShow}/episodes
+- Favorite
+    - On the favorites page, the user can see the favorite shows they selected on the show page.
+    - Use localstorage.
+    - EndPoints
+        - N/A
+      
 ## Prints
 Home
 

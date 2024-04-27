@@ -16,9 +16,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## PRODUCTION
+You can access:
+[https://series-fix.vercel.app/](https://series-fix.vercel.app/)
+
 ## ENV
 ```bash
-NEXT_PUBLIC_BASE_URL=http://localhost:3000/
+NEXT_PUBLIC_GATEWAY_API=https://api.tvmaze.com/
 ```
 
 ## Requirements
@@ -49,7 +53,6 @@ Styling only with CSS or SCSS/SASS.
 - Home
   - The Home displays the shows that will be released on the day the user accesses the page.
   - Endpoints
-      - https://localhost:3000/api/infos -> get today`s date of server
       - https://api.tvmaze.com/schedule?country=US&date=${date} -> get the shows whose episodes will be released on the day.
 
 - Shows
@@ -93,17 +96,15 @@ Favorites
 Files
 - src
     - app
-        - api -> Local endpoints created in nextjs
-          - infos -> https://localhost:3000/api/infos
-              - route.ts -> Today's data request by the server
-          - favoritos
-              - page.tsx -> Favorites page
-          - programas
-              - [slug]
-                  - page.tsx -> Show page
-              - page.tsx -> Shows page
-          - layout.tsx -> Common rendering on all pages
-          - page.tsx -> Home page
+      - favoritos
+        - page.tsx -> Favorites page
+      - programas
+        - [slug]
+          - page.tsx -> Show page
+        - page.tsx -> Shows page
+      - layout.tsx -> Common rendering on all pages
+      - page.tsx -> Home page
+      - not-found -> 404 page
     - components -> Global Components
         - Button -> Button Component
             - index.tsx
@@ -147,9 +148,6 @@ Files
         - RoundButton -> RoundButton Component
             - index.tsx
             - styles.module.css
-    - providers
-        - ShowsContext.tsx -> React Context
-        - types.tsx
     - screens -> Building screens and specific components
         - FavoriteScreens
           - index.tsx
@@ -169,18 +167,24 @@ Files
                 - index.tsx
                 - styles.module.css
             - index.tsx
+        - NotFoundScreens
+            - index.tsx
+            - styles.module.css
     - utils
         - functions
             - url.ts -> Functions that manipulate the endpoints urls
+            - images.ts -> Fuctions that manipulete images
             - text.ts -> Functions that manipulate the text structure
             - array.ts -> Functions that manipulate the array structure
         - hooks
-            - useMediaQuery.ts -> hook watch the screen size
             - usePathRouter.ts -> hook add the page number to the URL path
             - useShowPage.ts -> hook fetch api
+        - services
+            -api.ts -> service fetch api
         - styles
             - globals.css -> global styles
             - theme.css -> style theme used all aplication
         - types
             - tvShows.ts -> global types
+        - constants.ts -> All url and endpoints in the project
         - data.ts -> data used on app file

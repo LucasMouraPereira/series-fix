@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import style from './styles.module.css'
 import { formatDate, limitString } from 'src/utils/functions/texts'
-import { TVShowCard } from 'src/providers/types'
+import { TVShowCard } from 'src/utils/types/tvShows'
 
 type CardProps = {
   item: TVShowCard
@@ -16,7 +16,7 @@ const Card = ({ item, onClick }: CardProps) => {
     >
       <Image
         className={style.img}
-        src={item.image?.medium}
+        src={item.image.medium}
         alt={item.showName}
         width={152}
         height={214}
@@ -31,7 +31,7 @@ const Card = ({ item, onClick }: CardProps) => {
         </div>
         {!!item.airdate && (
           <div className={style.date}>
-            <span>Último episódio:</span>
+            <span>Last episode:</span>
 
             <span>
               {formatDate(item.airdate)} - {item.airtime}

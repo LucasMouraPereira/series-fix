@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { HeartFilledIcon, HeartIcon } from '@radix-ui/react-icons'
@@ -13,6 +12,7 @@ import Collapse from 'src/components/Collapse'
 import Rating from 'src/components/Rating'
 import RoundButton from 'src/components/RoundButton'
 import { useEffect, useMemo, useState } from 'react'
+import { fallbackImage } from 'src/utils/functions/images'
 
 type ShowContainerProps = {
   show: Show | null
@@ -57,19 +57,19 @@ const ShowContainer = ({ show }: ShowContainerProps) => {
   return (
     <main className={style.main}>
       <div className={style.header}>
-        <Button text={'Voltar'} onClick={goBack} position="right" />
+        <Button text={'Back'} onClick={goBack} position="right" />
         <h1>{show.name}</h1>
       </div>
       <div className={style.contentShow}>
         <Image
           className={style.img}
-          src={show.image?.original}
+          src={fallbackImage(show.image).original}
           alt={show.name}
           width={384}
           height={565}
         />
         <div className={style.contentDescription}>
-          <h2>Descrição:</h2>
+          <h2>Description:</h2>
           <p dangerouslySetInnerHTML={{ __html: show.summary }} />
           <div className={style.tags}>
             {show.genres.map((genre) => (
@@ -79,20 +79,20 @@ const ShowContainer = ({ show }: ShowContainerProps) => {
             ))}
           </div>
           <p>
-            <strong>Idioma: </strong>
+            <strong>Language: </strong>
             {show.language}
           </p>
           <p>
-            <strong>Lançamento: </strong>
+            <strong>Launch: </strong>
             {formatDate(show.premiered)}
           </p>
           <p>
-            <strong>status: </strong>
+            <strong>Status: </strong>
             {show.status}
           </p>
           <div>
             <p>
-              <strong>Avaliações: </strong>
+              <strong>Rating: </strong>
             </p>
             <Rating rating={show.rating} />
           </div>
@@ -109,20 +109,24 @@ const ShowContainer = ({ show }: ShowContainerProps) => {
             </p>
           )}
 
+          <div className={style.days}>
+            <p>
+              <strong>Exhibition: </strong>
+            </p>
+            <div className={style.scheduleDays}>
+              {show.schedule.days.map((day) => (
+                <span key={day} className={style.tag2}>
+                  {day}
+                </span>
+              ))}
+            </div>
+          </div>
           <p>
-            <strong>Exibição: </strong>
-            {show.schedule.days.map((day) => (
-              <span key={day} className={style.tag2}>
-                {day}
-              </span>
-            ))}
-          </p>
-          <p>
-            <strong>Horário: </strong>
+            <strong>Time: </strong>
             {show.schedule.time}
           </p>
           <RoundButton onClick={toggleFavorite}>
-            <strong>Adicionar ao favoritos</strong>
+            <strong>Add to favorites</strong>
             {isFavorite ? <HeartFilledIcon /> : <HeartIcon />}
           </RoundButton>
         </div>

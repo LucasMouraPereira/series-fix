@@ -1,26 +1,27 @@
 import type { NavBarProps } from './types'
+import { paths } from 'src/utils/constants'
 
 export const data: NavBarProps = {
   logo: {
     slug: 'logo',
     label: 'SERIES FLIX',
-    href: '/',
+    href: paths.HOME,
   },
   items: [
     {
       slug: 'home',
       label: 'Home',
-      href: '/',
+      href: paths.HOME,
     },
     {
       slug: 'shows',
-      label: 'Programas',
-      href: '/programas',
+      label: 'Programs',
+      href: paths.PROGRAMS,
     },
     {
       slug: 'favorites',
-      label: 'Favoritos',
-      href: '/favoritos',
+      label: 'Favorites',
+      href: paths.FAVORITES,
     },
   ],
 }

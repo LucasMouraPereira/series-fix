@@ -1,6 +1,6 @@
 import ShowsScreens from 'src/screens/ShowsScreens'
 
-const Shows = async () => {
+const Shows = () => {
   return <ShowsScreens />
 }
 

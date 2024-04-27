@@ -1,3 +1,8 @@
+export type ImageProps = {
+  medium: string
+  original: string
+}
+
 export type TVShow = {
   id: number
   url: string
@@ -10,7 +15,7 @@ export type TVShow = {
   airstamp: string
   runtime: number
   rating: { average: number | null }
-  image: { medium: string | null; original: string | null } | null
+  image: ImageProps
   summary: string
   show: {
     id: number
@@ -37,7 +42,7 @@ export type TVShow = {
     webChannel: null
     dvdCountry: null
     externals: { tvrage: null; thetvdb: null; imdb: null }
-    image: { medium: string; original: string }
+    image: ImageProps
     summary: string
     updated: number
     _links: {
@@ -62,7 +67,7 @@ export type TVShowCard = {
   showName: string
   language: string
   network: string
-  image: { medium: string; original: string }
+  image: ImageProps
   apiUrl: {
     self: { href: string }
     show: { href: string; name: string }
@@ -93,10 +98,7 @@ export type Episode = {
   rating: {
     average: number
   }
-  image: {
-    medium: string
-    original: string
-  }
+  image: ImageProps
   summary: string
   _links: {
     self: {
@@ -147,10 +149,7 @@ export type Show = {
     thetvdb: number | null
     imdb: string | null
   }
-  image: {
-    medium: string
-    original: string
-  }
+  image: ImageProps
   summary: string
   updated: number
   _links: {

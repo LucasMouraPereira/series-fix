@@ -1,8 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 import { Show, TVShowCard } from '../types/tvShows'
 import { buildUrl } from 'src/utils/functions/url'
+import { fetchData } from 'src/utils/services/api'
 import type { useShowPageProps } from 'src/utils/functions/url'
+import { fallbackImage } from 'src/utils/functions/images'
+import { endpointsComplements } from '../constants'
 
 type UseShowPageResult = {
   shows: TVShowCard[] | null
@@ -25,38 +27,29 @@ export const useShowPage = ({
     try {
       setLoading(true)
       const url = buildUrl({ idShow, search, pagination })
-      const response = await fetch(url)
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch show')
-      }
-      const data = await response.json()
-
+      const responseShow = await fetchData(url)
       if (idShow) {
-        setShow(data)
-        const episodesResponse = await fetch(`${url}/episodes`)
-        if (!episodesResponse.ok) {
-          throw new Error('Failed to fetch episodes')
-        }
-        const episodesData = await episodesResponse.json()
-
+        setShow(responseShow as Show)
+        const episodesResponse = await fetchData(`${url}/${endpointsComplements.EPISODES}`)
         setShow(
           (prevShow) =>
             ({
               ...prevShow,
-              episodes: episodesData,
+              episodes: episodesResponse,
             }) as Show
         )
       } else {
+        const responseShows = responseShow as Show[]
         setShows(
-          data.map((page: Show) => ({
+          responseShows.map((page: Show) => ({
+            showId: page?.id,
             id: page?.id,
             airdate: page?.ended,
             airtime: page?.schedule.time,
             showName: page?.name,
             language: page?.language,
             network: page?.network?.name,
-            image: page?.image,
+            image: fallbackImage( page.image),
             apiUrl: {
               self: page['_links']?.self,
               show: {

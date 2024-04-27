@@ -1,26 +1,23 @@
 import HomeScreens from 'src/screens/HomeScreens'
-import homeData from '../utils/data'
-import type { TVShowsList } from 'src/utils/types/tvShows'
+import homeData from 'src/utils/data'
+import type { TVShowSchedule, TVShowsList } from 'src/utils/types/tvShows'
+import { fetchData } from 'src/utils/services/api'
+import { fallbackImage } from 'src/utils/functions/images'
+import { endpointsComplements } from 'src/utils/constants'
 
 export const dynamic = 'auto'
-export const revalidate = false
-async function getInfos() {
-  const info = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/infos`)
-  const newInfo = info.json()
-  return newInfo
-}
+export const revalidate = 30
 
 async function getShows() {
-  const { date } = await getInfos()
-  const res = await fetch(
-    `https://api.tvmaze.com/schedule?country=US&date=${date}`
+  const date = new Date().toISOString().slice(0, 10)
+  const res = await fetchData(
+    `${endpointsComplements.SCHEDULE}?${endpointsComplements.COUNTRY}=US&${endpointsComplements.DATE}=${date}`
   )
-  const data = res.json()
-  return data
+  return res
 }
 
 const Home = async () => {
-  const res: TVShowsList = await getShows()
+  const res = (await getShows()) as TVShowsList
   const { title, description, link } = homeData
   const pageData = {
     title,
@@ -34,10 +31,10 @@ const Home = async () => {
       showName: ep.show.name,
       language: !ep.show.language ? 'N/A' : ep.show.language,
       network: !ep.show.network?.name ? 'N/A' : ep.show.network.name,
-      image: ep?.show?.image,
+      image: fallbackImage(ep.show.image),
       apiUrl: ep['_links'],
     })),
-  }
+  } as TVShowSchedule
   return <HomeScreens pageData={pageData} />
 }
 

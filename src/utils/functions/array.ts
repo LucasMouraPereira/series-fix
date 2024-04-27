@@ -8,7 +8,7 @@ type SeasonGroup = {
 export const groupEpisodesBySeason = (episodes: Episode[]): SeasonGroup[] => {
   const groupedEpisodes: { [key: string]: Episode[] } = {}
   episodes.forEach((episode) => {
-    const seasonText = `Temporada ${episode.season}`
+    const seasonText = `Season ${episode.season}`
     if (!groupedEpisodes[seasonText]) {
       groupedEpisodes[seasonText] = []
     }

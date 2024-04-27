@@ -30,7 +30,7 @@ const Pagination = ({ page, totalPages, isFirstPage }: PaginationProps) => {
     <div className={style.wrapperPagination}>
       <div className={style.paginationMobile}>
         <div className={style.wrapperText}>
-          Página <span>{page}</span> de <span>{totalPages}</span>
+          Page <span>{page}</span> of <span>{totalPages}</span>
         </div>
         <div className={style.wrapperRoundButton}>
           <RoundButton disabled={page === 0 ? true : false} onClick={goBack}>
@@ -50,7 +50,7 @@ const Pagination = ({ page, totalPages, isFirstPage }: PaginationProps) => {
             <ArrowLeftIcon />
           </RoundButton>
           <div className={style.wrapperText}>
-            Página <span>{page}</span> de <span>{totalPages}</span>
+            Page <span>{page}</span> of <span>{totalPages}</span>
           </div>
           <RoundButton
             disabled={page === totalPages ? true : false}

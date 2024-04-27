@@ -1,3 +1,4 @@
+import { endpointsComplements } from 'src/utils/constants'
 export type useShowPageProps = {
   pagination?: number | false
   search?: string
@@ -5,10 +6,10 @@ export type useShowPageProps = {
 }
 
 export const buildUrl = ({ idShow, search, pagination }: useShowPageProps) => {
-  let urlShow = 'https://api.tvmaze.com/shows'
-  let urlSearch = `https://api.tvmaze.com/search/shows?q=${search}`
+  let urlShow = endpointsComplements.SHOWS
+  let urlSearch = `${endpointsComplements.SEARCH}/${urlShow}?${endpointsComplements.QUERY}=${search}`
   if (pagination) {
-    return `${urlShow}?page=${pagination}`
+    return `${urlShow}?${endpointsComplements.PAGE}=${pagination}`
   }
   if (idShow) {
     return `${urlShow}/${idShow}`

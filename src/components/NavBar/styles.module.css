@@ -31,7 +31,6 @@
 
 .flex {
   display: flex;
-  gap: var(--spacings-lg);
 }
 
 .sidebar {
@@ -43,7 +42,7 @@
   gap: 32px;
   width: 100%;
   max-width: 200px;
-  top: 8%;
+  top: 78px;
   right: 0;
   background-color: var(--border-main);
   padding: 16px;
@@ -57,4 +56,19 @@
   height: 100vh;
   position: fixed;
   background: rgba(255, 255, 255, 0.6);
+}
+
+.desktop {
+  display: none;
+  gap: var(--spacings-lg);
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+.mobile {
+  display: flex;
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }

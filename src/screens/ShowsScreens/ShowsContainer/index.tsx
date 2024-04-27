@@ -6,6 +6,7 @@ import styles from './styles.module.css'
 import ListCards from 'src/components/ListCards'
 import Card from 'src/components/Card'
 import Pagination from 'src/components/Pagination'
+import { paths } from 'src/utils/constants'
 
 const ShowsContainer = () => {
   const router = useRouter()
@@ -19,14 +20,14 @@ const ShowsContainer = () => {
   if (!shows?.length) return null
 
   const goToShow = (id: number) => {
-    router.push(`/programas/${id}`)
+    router.push(`${paths.PROGRAMS}/${id}`)
   }
 
   return (
     <main className={styles.main}>
       <div className={styles.header}>
-        <h1>Todos os programas</h1>
-        <p>Veja os detalhes de seus programas favoritos</p>
+        <h1>All the programs</h1>
+        <p>See details of your favorite shows</p>
       </div>
       <div>
         <ListCards list={shows} borderRadius="8px">

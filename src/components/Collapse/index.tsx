@@ -4,6 +4,7 @@ import { Episode } from 'src/utils/types/tvShows'
 import style from './styles.module.css'
 import { CaretDownIcon } from '@radix-ui/react-icons'
 import Rating from '../Rating'
+import { fallbackImage } from 'src/utils/functions/images'
 
 type GroupedEpisodes = {
   seasonText: string
@@ -44,19 +45,19 @@ const Collapse: React.FC<CollapseProps> = ({ groupedEpisodes }) => {
                     <div className={style.episode}>
                       <div>
                         <Image
-                          src={episode.image?.original}
+                          src={fallbackImage(episode.image).original}
                           alt={episode.name}
                           width={384}
                           height={216}
                         />
                         <div className={style.rating}>
                           <p>
-                            <strong>Avaliações: </strong>
+                            <strong>Rating: </strong>
                           </p>
                           <Rating rating={episode.rating} />
                         </div>
                         <p>
-                          <strong>Duração do episódio: </strong>
+                          <strong>Episode length: </strong>
                           {episode.runtime}
                         </p>
                       </div>

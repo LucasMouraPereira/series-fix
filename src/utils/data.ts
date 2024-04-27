@@ -1,9 +1,10 @@
+import { paths } from 'src/utils/constants'
 const homeData = {
-  title: 'Próximas estreias das temporadas dos seus programas favoritos',
-  description: 'Aqui você pode acompanhar os lançamentos do dia',
+  title: 'Upcoming season premieres of your favorite shows',
+  description: 'Here you can follow the day\'s releases',
   link: {
-    label: 'Veja todos',
-    href: '/programas',
+    label: 'See all',
+    href: paths.PROGRAMS,
   },
 }
 
